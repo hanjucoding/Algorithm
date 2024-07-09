@@ -38,3 +38,13 @@ UNION은 두 SELECT문을 하나의 결과로 합쳐줌
 조건: SELECT문 끼리 데이터형식과 열이 같아야함  
 1. UNION: 중복 제거  
 2. UNION ALL: 중복제거X  
+
+## IF문
+```sql
+SELECT BOARD_ID ,WRITER_ID, TITLE, PRICE,
+IF(STATUS='SALE','판매중',IF(STATUS='RESERVED','예약중','거래완료'))AS STATUS
+FROM USED_GOODS_BOARD
+WHERE CREATED_DATE ='2022-10-05'
+ORDER BY 1 DESC
+```
+if문 형식 외우기  
