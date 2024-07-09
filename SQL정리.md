@@ -71,3 +71,19 @@ ORDER BY 2 DESC ,1 DESC
 - having 절은 Group By 절 뒤에 사용  
 - Where 절은 Group By 절 앞에 사용  
 그룹 연산의 결과를 가지고 select하고 싶을때 사용
+
+## CASE WHEN END
+```sql
+SELECT 
+    CASE 
+        WHEN MONTH(DIFFERENTIATION_DATE) IN (1, 2, 3) THEN '1Q'
+        WHEN MONTH(DIFFERENTIATION_DATE) IN (4, 5, 6) THEN '2Q'
+        WHEN MONTH(DIFFERENTIATION_DATE) IN (7, 8, 9) THEN '3Q'
+        ELSE '4Q'
+    END AS QUARTER,
+    COUNT(*) AS ECOLI_COUNT
+FROM ECOLI_DATA
+GROUP BY QUARTER
+ORDER BY 1
+```
+
