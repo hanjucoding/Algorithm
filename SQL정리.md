@@ -59,3 +59,15 @@ WHERE START_DATE LIKE '2022-09%'
 ORDER BY 1 DESC
 ```
 30일 이상 차이 나는가? -> DATEDIFF(END_DATE, START_DATE)+1 >=30,'장기 대여','단기 대여')  
+
+## HAVING절
+```sql
+SELECT CAR_ID, ROUND(AVG(DATEDIFF(END_DATE,START_DATE)+1),1) AS AVERAGE_DURATION
+FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY
+GROUP BY CAR_ID
+HAVING AVERAGE_DURATION >= 7
+ORDER BY 2 DESC ,1 DESC
+```
+- having 절은 Group By 절 뒤에 사용  
+- Where 절은 Group By 절 앞에 사용
+그룹 연산의 결과를 가지고 select하고 싶을때 사용
