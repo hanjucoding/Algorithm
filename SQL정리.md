@@ -69,5 +69,5 @@ HAVING AVERAGE_DURATION >= 7
 ORDER BY 2 DESC ,1 DESC
 ```
 - having 절은 Group By 절 뒤에 사용  
-- Where 절은 Group By 절 앞에 사용
+- Where 절은 Group By 절 앞에 사용  
 그룹 연산의 결과를 가지고 select하고 싶을때 사용
