@@ -17,6 +17,7 @@ ORDER BY 1
 DATE_FORMAT( A , '%B')  
 A날짜에 대하여 B로 처리  
 '%H'는 시간만 출력  
+  
 ex) 2024-07-09
 ```sql
 DATE_FORMAT(date, '%y-%m-%d')
