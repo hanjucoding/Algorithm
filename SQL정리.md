@@ -47,4 +47,4 @@ FROM USED_GOODS_BOARD
 WHERE CREATED_DATE ='2022-10-05'
 ORDER BY 1 DESC
 ```
-if문 형식 외우기  
+if(A,B,C) -> A면 B, 아니면 C  
