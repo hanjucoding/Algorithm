@@ -44,7 +44,7 @@ public class Main {
             }
         }
     }
-    //bfs재귀함수로 구현
+    //bfs 큐로 구현
     static void bfs(int V){
         queue.add(V);
         visited[V] = true;
@@ -63,3 +63,4 @@ public class Main {
     }
 }
 
+//풀이 https://hanjucoding.tistory.com/4
