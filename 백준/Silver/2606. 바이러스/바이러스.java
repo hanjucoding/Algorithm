@@ -22,21 +22,36 @@ public class Main {
             arr[x][y] = 1;
             arr[y][x] = 1;
         }
-        result = 0;
-        queue = new LinkedList<>();
-        bfs(1);
-        System.out.println(result);
 
+        //bfs로 풀기
+        queue = new LinkedList<>();
+//        result = 0;
+//        bfs(1);
+//        System.out.println(result);
+
+        //dfs로 풀기
+        result = 0;
+        dfs(1);
+        System.out.println(result - 1);
+    }
+
+    static void dfs(int V) {
+        visited[V] = true;
+        result++;
+        for (int i = 0; i < N + 1; i++) {
+            if (arr[V][i] == 1 && !visited[i]) {
+                dfs(i);
+            }
+        }
     }
 
     static void bfs(int n) {
         visited[n] = true;
         queue.add(n);
-
         while (!queue.isEmpty()) {
             int node = queue.poll();
-            for (int i = 1; i < N+1; i++) {
-                if(arr[node][i] == 1 && !visited[i]) {
+            for (int i = 1; i < N + 1; i++) {
+                if (arr[node][i] == 1 && !visited[i]) {
                     visited[i] = true;
                     queue.add(i);
                     result++;
@@ -44,5 +59,9 @@ public class Main {
             }
         }
     }
+
+
 }
+
+
 
